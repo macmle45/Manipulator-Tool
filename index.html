@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Manipulator Tool</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="field_option">
+        <div class="head">Options</div>
+
+        <p class="titl">Color</p>
+            <button class="btn" id="back" onclick="bck()">Previous</button>
+            <button class="btn" id="next" onclick="nxt()">Next</button>
+
+        <p class="titl">Size</p>
+        <div onmousemove="handl_size()">
+            <label>X <input class="rng" id="rg_s_x" type="range" value="300" min="0" max="700" step="1"/></label><div id="sq0" class="sq_ct"></div><br>
+            <label>Y <input class="rng" id="rg_s_y" type="range" value="100" min="0" max="700" step="1"/></label><div id="sq1" class="sq_ct"></div>
+        </div>
+
+        <p class="titl">Position</p>
+        <div onmousemove="handl_pos()">
+            <label>X <input class="rng" id="rg_pos_x" type="range" value="300" min="0" max="700" step="1"/></label><div id="sq2" class="sq_ct"></div><br>
+            <label>Y <input class="rng" id="rg_pos_y" type="range" value="240" min="0" max="700" step="1"/></label><div id="sq3" class="sq_ct"></div>
+        </div>
+
+        <p class="titl">Borders</p>
+        <div onclick="handl_bord()">
+            <label><input id="r0" type="radio" name="border" checked/> None</label><br>
+            <label><input id="r1" type="radio" name="border"/> Solid</label><br>
+            <label><input id="r2" type="radio" name="border"/> Dashed</label><br>
+            <label><input id="r3" type="radio" name="border"/> Dotted</label><br>
+            <label><input id="r4" type="radio" name="border"/> Inset</label><br>
+            <label><input id="r5" type="radio" name="border"/> Outset</label><br>
+            <label>Color of borders <input type="color" id="col_bar"/></label>
+        </div>
+
+        <p class="titl">Name of element</p>
+        <label>Enter name <input type="text" id="field_nm"/></label>
+        <input type="submit" class="btn" id="btn_subm" value="Submit" onclick="handl_name()"/>
+        <input type="submit" class="btn" id="btn_subm_rm" value="Delete" onclick='document.getElementById("square").innerHTML = ""'/>
+
+
+    </div>
+
+    <div id="field_move">
+        <div class="head">Field of move</div>
+        <div id="square"></div>
+    </div>
+</body>
+</html>
